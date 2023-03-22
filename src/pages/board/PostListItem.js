@@ -159,7 +159,10 @@ function PostListItem(props) {
       else if(loggedinUser.authority === 'user') setAuthority('user');
     } else setAuthority('anonymous');
   }, [loggedinUser]);
-
+  
+  useEffect(() => {
+    handleOpen()
+  }, [editContents]);
 
   const handleOpen = ()=> {
     setBtn(true);
