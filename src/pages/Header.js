@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, Outlet, Link, NavLink } from 'react-router-dom';
+import { useNavigate, Outlet, Link, NavLink } from 'react-router-dom'; // div같이 링크기능이 없는것에 링크를 만들어줌: useNavigate, link: style 이 필요없는 링크, NavLink : 메뉴에 액티브되었을때 스타일을 줄 수 있음!
 import styled from 'styled-components';
 import { resetColor, selectColor } from '../features/color/colorSlice';
 import { selectUser, userLogOut } from '../features/user/userSlice';

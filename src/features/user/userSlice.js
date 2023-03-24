@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loggedinUser: null
+  loggedinUser: null //초기값 null
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    userLogIn: (state, { payload:
+    userLogIn: (state, { payload: // pw 정보를 제외한 나머지만 구조분해 할당으로
       { firstName,
         lastName,
         id,

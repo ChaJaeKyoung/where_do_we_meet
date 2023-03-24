@@ -38,7 +38,7 @@ function Map (props) {
       center: new kakao.maps.LatLng(37.452337443959, 126.69960367814),
       level: 3,
     };
-    setMap(new kakao.maps.Map(mapRef.current, options));
+    setMap(new kakao.maps.Map(mapRef.current, options)); //useRef 쓸 때는 current 를 써야함
   }, []);
   
   // 나의 주소, 친구 주소 모두 들어왔을 때 주소 검색해주는 함수
@@ -172,7 +172,7 @@ function Map (props) {
   };
 
   return (
-      <MapWrapper ref={mapRef} />
+      <MapWrapper ref={mapRef} /> // 부득이하게 ref는 렌더링과 상관없이 하나를 나타낼때
     );
   }
   
