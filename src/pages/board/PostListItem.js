@@ -202,8 +202,9 @@ function PostListItem(props) {
         { btn && <Comment data={post.comments} postId={post.id} listName={listName} /> }
 
         <StyleDiv>
-          <ul className="post-item-icon">       
-            <li onClick={() => dispatch(increment({id: post.id, listName }))}><AiFillHeart className="icon-like"/><span> {post.like}</span></li>
+          <ul className="post-item-icon">
+            {/* 익명일경우 좋아요 버튼 누를 수 없고, 회원당 좋아요 한번으로 제한: 파이어베이스 */}
+            <li onClick={() => dispatch(increment({id: post.id, listName }))}><AiFillHeart className="icon-like"/><span> {post.like}</span></li> 
             <li onClick={handleOpen}><FaRegCommentDots className="icon-comment" /><span>{post.comments.length}</span></li>
           </ul>
           {
