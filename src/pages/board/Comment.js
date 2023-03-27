@@ -191,10 +191,11 @@ function Comment(props) {
               {
                 authority === 'admin'
                 ? <RiCloseFill className="cursor-pointer" onClick={() => dispatch(removeComment({ postId: postId, commentId: comment.id, listName }))}/>
-                : (authority === 'user' && comment.userId === loggedInUser.id) && (
+                : ((authority === 'user') && (comment.commentsUserId === loggedInUser.id)) && (
                   <RiCloseFill className="cursor-pointer" onClick={() => dispatch(removeComment({ postId: postId, commentId: comment.id, listName }))}/> //본인 댓글 삭제 버튼 안뜨는 오류 발견!
                 )
               }
+              {console.log(comment,loggedInUser.id)}
             </CommentWrapper>                   
           );
         })}        
